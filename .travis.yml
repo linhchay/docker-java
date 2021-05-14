@@ -2,9 +2,10 @@ sudo: required
 services:
   - docker
 before_install:
+  - mvn clean install
   - docker build -t linhvv/docker-java .
 script:
-  - docker run linhvv/docker-java mvn clean install
+  - docker run linhvv/docker-java
 deploy:
   provider: elasticbeanstalk
   region: "ap-southeast-1"
