@@ -1,6 +1,5 @@
 FROM openjdk:8-jdk-alpine
-VOLUME /tmp
+WORKDIR /usr/local/bin
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /app.jar"]
-EXPOSE 80
+CMD ["java", "-jar", "app.jar"]
