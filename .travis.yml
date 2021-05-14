@@ -4,7 +4,7 @@ services:
 before_install:
   - mvn clean install -DskipTests=true
 script:
-  - docker-compose up --build
+  - docker-compose up -d --build
 deploy:
   provider: elasticbeanstalk
   region: "ap-southeast-1"
